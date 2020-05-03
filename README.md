@@ -32,9 +32,8 @@
 #### TCP 
     tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)    
 
-#### TCP服务器伪代码
+#### TCP 服务器伪代码
 >"""  
->>TCP服务器伪代码  
 >>ss = socket()                   # 创建伪代码  
 >>ss.bind()                       # 套接字与地址绑定  
 >>ss.listen()                     # 监听连接  
@@ -49,9 +48,8 @@
 >>  
 >"""
 
-#### TCP客户端伪代码
+#### TCP 客户端伪代码
 >"""  
->>TCP 客户端伪代码  
 >>cs = socket()               # 创建客户端套接字  
 >>cs.connect()                # 尝试连接服务器  
 >>comm_loop:                  # 通信循环  
@@ -59,4 +57,31 @@
   
 >>cs.close()                  # 关闭客户端套接字  
 >>    
+>"""
+
+
+#### UDP
+    udp_socket = socket.socket(AF_INET, SOCK_DGRAM)
+    
+####UDP 服务器伪代码
+
+>"""
+>>ss = socket()                           # 创建服务器套接字  
+>>ss.bind()                               # 绑定服务器套接字  
+>>inf_loop:                               # 服务器无限循环  
+>>>cs = ss.recvfrom()/ss.sendto()      # 关闭（接收/发送）  
+>>
+>>ss.close()                              # 关闭服务器套接字
+>>  
+>"""
+
+####UDP 客户端伪代码
+
+>"""    
+>>cs = socket()                       # 创建客户端套接字  
+>>comm_loop:                          # 通信循环  
+>>>cs.sendto()/cs.recvfrom()       # 对话（发送/接收） 
+>> 
+>>cs.close()                          # 关闭客户端  
+>>  
 >"""
