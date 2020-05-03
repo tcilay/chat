@@ -63,7 +63,7 @@
 #### UDP
     udp_socket = socket.socket(AF_INET, SOCK_DGRAM)
     
-####UDP 服务器伪代码
+#### UDP 服务器伪代码
 
 >"""
 >>ss = socket()                           # 创建服务器套接字  
@@ -75,7 +75,7 @@
 >>  
 >"""
 
-####UDP 客户端伪代码
+#### UDP 客户端伪代码
 
 >"""    
 >>cs = socket()                       # 创建客户端套接字  
